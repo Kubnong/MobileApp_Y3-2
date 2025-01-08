@@ -1,20 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import HomeScreen from "./src/screens/HomeScreen";
+import ComponentScreen from "./src/screens/ComponentScreen";
+import ListScreen from "./src/screens/ListScreen";
+import StateScreen from "./src/screens/StateScreen";
+import ModalScreen from "./src/screens/ModalScreen";
+import SwipeScreen from "./src/screens/SwipeScreen";
 
-export default function App() {
+const Stack = createStackNavigator()
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="HomeScreen">
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="Component" component={ComponentScreen} />
+        <Stack.Screen name="List" component={ListScreen} />
+        <Stack.Screen 
+          name="State" 
+          component={StateScreen} 
+          options = {{title : "Learning UseState 🎪"}}/>
+        <Stack.Screen name="Modal" component={ModalScreen}/>
+        <Stack.Screen name="Swipe" component={SwipeScreen}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  ) 
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
