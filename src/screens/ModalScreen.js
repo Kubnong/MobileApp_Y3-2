@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import {View, Text, StyleSheet, Modal, TouchableOpacity} from "react-native";
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import MyButton from "../components/MyButton";
+
 const ModalScreen = ({navigation}) => {
     const [isVisible, setIsVisible] = useState(false)
     return (

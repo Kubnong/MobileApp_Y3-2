@@ -1,5 +1,6 @@
 import React from "react";
 import {View ,Text ,StyleSheet, Button} from 'react-native';
+import MyButton from "../components/MyButton";
 
 //function HomeScreen() {}
 //const HomeScreen = (a, b) => {}
@@ -15,9 +16,25 @@ const HomeScreen = ({ navigation }) => {
                 title = "Go to Swipe Demo"
                 onPress={() => navigation.navigate("Swipe")}
             />
-            <Button
+            <MyButton
                 title = "Go to Modal Demo"
                 onPress={() => navigation.navigate("Modal")}
+                backgroundColor="#523d35"
+            />
+            <MyButton 
+                title="ปุ่ม 1" 
+                onPress={() => alert("ปุ่ม 1 ถูกกด")} 
+                backgroundColor="#523d35"
+            />
+            <MyButton 
+                title="ปุ่ม 2" 
+                onPress={() => alert("ปุ่ม 2 ถูกกด")}
+                backgroundColor="#523d35"
+            />
+            <MyButton 
+                title="เปิดการ์ด" 
+                onPress={() => navigation.navigate("Card")}
+                backgroundColor="#223030"
             />
         </View>
     );
