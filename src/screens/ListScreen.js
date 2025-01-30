@@ -22,14 +22,6 @@ const ListScreen = ({navigation}) => {
             const newList = data.filter((item) => item.name != name);
             setData(newList);
         };
-    {/*
-    const ShowAlert = (said,msg) => {
-            Alert.alert(said, msg,[
-                {text:"OK",onPress: () => console.log('Click OK')},
-                {text:"Cancel",onPress: () => console.log('Click Cancel')},
-            ]);
-        };
-    */}
     return (
         <View style={styles.container}>
             <Text style = {styles.textTitle}>Recents</Text>
@@ -94,7 +86,7 @@ const ListScreen = ({navigation}) => {
                         </View>
                     );
                 }}
-                renderHiddenItem={({item}) => (
+                renderHiddenItem={({item}) => ( // แสดงปุ่มลบที่อยู่หลังรายการเมื่อปัดไปทางซ้าย
                     <TouchableOpacity 
                         style={styles.actionButton} 
                         onPress={() => deleteItem(item.name)}
@@ -102,8 +94,8 @@ const ListScreen = ({navigation}) => {
                         <Text style={StyleSheet.actionText}>Delete {item.name}</Text>
                     </TouchableOpacity>
                 )}  
-                rightOpenValue={-100}
-                disableRightSwipe={true} 
+                rightOpenValue={-100} // กำหนดระยะปัดทางขวา (ปัดเพื่อลบ)
+                disableRightSwipe={true} // ปิดการปัดทางซ้าย
                 onSwipeValueChange={(swipeData) => {
                     const {key, value} = swipeData;
                     value <= -300 ? deleteItem(key) : null;
@@ -152,13 +144,13 @@ const styles = StyleSheet.create({
         borderWidth:1,
         borderRadius:30
     },
-    modalOverlay:{
+    modalOverlay:{ // พื้นหลังโปร่งแสง
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "rgba(0,0,0,0.5)"
     },
-    modalContainer:{
+    modalContainer:{ // กล่องเนื้อหา Modal
         width:300,
         height:400,
         backgroundColor:"#fff",

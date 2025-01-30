@@ -2,7 +2,7 @@ import React from "react";
 import {View ,Text ,StyleSheet ,Image ,Button ,Alert ,TouchableOpacity} from 'react-native';
 
 
-const ComponentScreen = () => {
+const ComponentScreen = ({navigation}) => {
     const name = "Phattharapong";
     const a = ["Ph","ul"];
     const b = <Text style={styles.text}>2024</Text>
@@ -47,10 +47,10 @@ const styles = StyleSheet.create({
     ImageStyle:{
         width:210,
         height:250,
-        margin:5,
-        borderWidth:1,
-        borderRadius:200
-    }
+        margin:5, // เว้นระยะห่างรอบรูปภาพ
+        borderWidth:1, // เพิ่มเส้นขอบบาง ๆ
+        borderRadius:200 // ทำให้รูปภาพมีความโค้งมนจนกลายเป็นวงกลม
+    } 
 });
 
 export default ComponentScreen;

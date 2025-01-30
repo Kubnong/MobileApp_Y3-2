@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import {View, Text, StyleSheet, Button} from "react-native";
 
-const StateScreen = () => {
-   const [value, setValue] = useState(0);
+const StateScreen = ({ navigation }) => {
+    const [value, setValue] = useState(0);
     return (
         <View style={styles.container}>
             <Text style={styles.text}>{value}</Text>

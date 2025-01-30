@@ -22,10 +22,20 @@ const HomeScreen = ({ navigation }) => {
                 onPress={() => navigation.navigate("Modal")}
                 color='green'
             />
+            <Button
+                title = "Go to Component Screen"
+                onPress={() => navigation.navigate("Component")}
+                color='green'
+            />
             <CustomButton
                 title='เรียก Card Screen 🚀'
                 onPress={() => navigation.navigate("Card")} 
                 backgroundColor="grey"
+            />
+            <CustomButton
+                title='ซ้อม useEffect'
+                onPress={() => navigation.navigate("Load")} 
+                backgroundColor="blue"
             />
             <Card title='Card #4' content='This is the card number Four.'/>  
         </View>
@@ -35,9 +45,9 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     container:{
         flex: 1,
-        flexDirection: "row",
-        alignItems: 'center',
-        justifyContent: 'center'
+        flexDirection: "row", // จัดคอมโพเนนต์ในแนวนอน
+        alignItems: 'center', // จัดตำแหน่งในแนวตั้ง
+        justifyContent: 'center' // จัดตำแหน่งในแนวนอน
     },
     text:{
         fontSize: 20,
